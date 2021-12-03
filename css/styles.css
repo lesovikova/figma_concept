@@ -41,6 +41,8 @@ a {
     letter-spacing: 0.125rem;
     color: var(--menu-header);
     line-height: 1.25rem;
+}
+.header-nav__item {
     margin-left: 1.3rem;
 }
 .user-menu__button {
@@ -72,7 +74,7 @@ a {
 
     display: flex;
     justify-content: space-around;
-    padding-top: 1rem;
+    padding-top: 5rem;
     align-items: center;
 }
 .header-nav_menu {
@@ -96,4 +98,22 @@ a {
         justify-content: center;
     }
 }
-  
+  @media (min-width: 990px) {
+      html {
+          font-size: 16px;
+      }
+    .header__burger-button {
+        display: initial;
+    }
+.header-nav {
+    display: flex;
+    align-items: center;
+}
+.header__burger-button {
+    padding: 0;
+    margin: 0;
+    }
+    .header-nav__item:first-of-type{
+        margin-left: 2.75rem;
+    }
+  }
