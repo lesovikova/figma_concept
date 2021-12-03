@@ -13,9 +13,9 @@ body {
     margin: 0;
     padding: 0;
     /* width: 1440px; */
-    margin: auto;
     background-color: var(--bg-main);
 }
+
 ul {
     list-style: none;
     margin: 0;
@@ -41,6 +41,7 @@ a {
     letter-spacing: 0.125rem;
     color: var(--menu-header);
     line-height: 1.25rem;
+    margin-left: 1.3rem;
 }
 .user-menu__button {
     text-transform: uppercase;
@@ -51,6 +52,7 @@ a {
     letter-spacing: 0.125rem;
     text-align: center;
     padding: 0.5rem 1.5rem;
+    margin-right: 1.25rem;
 }
 .user-menu__button_left {
     background: none;
@@ -70,10 +72,28 @@ a {
 
     display: flex;
     justify-content: space-around;
-    padding: 1rem;
+    padding-top: 1rem;
     align-items: center;
 }
 .header-nav_menu {
     display: none;
 }
 }
+@media (min-width: 680px) {
+    html {
+        font-size: 15px;
+    }
+    
+    .header-nav_menu {
+        display: flex;
+        justify-content: space-around;
+    }
+    .header__burger-button {
+        display: none;
+    }
+    .user-menu {
+        display: flex;
+        justify-content: center;
+    }
+}
+  
