@@ -2,6 +2,7 @@
     --buttons: #F2994A;
     --menu-header: #B5B5B5;
     --white: #ffffff;
+    --bg-main: #040D3E;
 
 }
 
@@ -13,6 +14,7 @@ body {
     padding: 0;
     width: 1440px;
     margin: auto;
+    background-color: var(--bg-main);
 }
 ul {
     list-style: none;
@@ -21,6 +23,12 @@ ul {
 }
 a {
     text-decoration: none; 
+}
+.gradient {
+    
+    height: 94rem;
+    margin-bottom: -94rem;
+    background: linear-gradient(222.26deg, #3B1D60 0.79%, #040D3E 105.85%);
 }
 .header__burger-button {
     border: none;
@@ -52,4 +60,12 @@ a {
     color: var(--white);
     background-color: var(--buttons);
     border-color: var(--buttons);
+}
+@media (min-width: 320px){
+.header {
+    display: flex;
+}
+.header-nav_menu {
+    display: none;
+}
 }
