@@ -12,7 +12,7 @@ html {
 body {
     margin: 0;
     padding: 0;
-    width: 1440px;
+    /* width: 1440px; */
     margin: auto;
     background-color: var(--bg-main);
 }
@@ -32,6 +32,7 @@ a {
 }
 .header__burger-button {
     border: none;
+    background-color: transparent;
 }
 .header-nav__link {
     font-family: 'Gilroy-SemiBold';
@@ -62,8 +63,15 @@ a {
     border-color: var(--buttons);
 }
 @media (min-width: 320px){
+    html {
+        font-size: 14px;
+    }
 .header {
+
     display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+    align-items: center;
 }
 .header-nav_menu {
     display: none;
