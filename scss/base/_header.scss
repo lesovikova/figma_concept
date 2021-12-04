@@ -1,7 +1,8 @@
 @import "vars";
+@import "mixin";
 
 html {
-  font-size: 16px;
+  font-size: 14px;
 }
 body {
   margin: 0;
@@ -27,7 +28,11 @@ a {
     border: none;
     background-color: transparent;
   }
+  @include e(title) {
+    display: none;
+  }
 }
+
 .header-nav {
   @include e(link) {
     font-family: "Gilroy-SemiBold";

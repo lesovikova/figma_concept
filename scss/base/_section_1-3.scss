@@ -1,0 +1,61 @@
+@import "vars";
+@import "mixin";
+
+.section-first {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+
+    @include e(column){
+        flex-basis: 1;
+        margin: 0 1rem;
+
+        @include m(second) {
+            display: none;
+        }
+    }
+    @include e(title) {
+        font-family: 'Inter', sans-serif;
+        font-weight: 700;
+        font-size: 2rem;
+        color: $titles-col;
+        text-align: left;
+    }
+    @include e(paragraph) {
+        font-family: 'Gilroy-SemiBold';
+        color: $paragr-col;
+        text-align: left;
+        font-size: 1.2rem;
+    }
+    @include e(buttons) {
+        display: flex;
+        justify-content: space-between;
+        
+    }
+    @include e(button) {
+        @include m(opaque) {
+            padding: 0.5rem 2.2rem;
+            @include buttonOrange 
+            
+        }
+        @include m(clear) {
+            padding: 0.5rem 4.1rem;
+            @include buttonClear 
+        }
+    }
+    @include e(video-block) {
+        margin-top: 1rem;
+    }
+    @include e(link) {
+        color: $link-col;
+    }
+
+    
+    }
+    .video {
+        width: 100%;
+    }
+    @media (min-width: 680px) {
+        
+    }
+
