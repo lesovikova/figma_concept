@@ -1,3 +1,5 @@
+@import "vars";
+
 html {
   font-size: 16px;
 }
@@ -14,11 +16,7 @@ ul {
 a {
   text-decoration: none;
 }
-.gradient {
-  height: 94rem;
-  margin-bottom: -94rem;
-  background: linear-gradient(222.26deg, #3b1d60 0.79%, #040d3e 105.85%);
-}
+
 .header {
   display: flex;
   justify-content: space-around;
