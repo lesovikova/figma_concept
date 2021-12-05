@@ -33,3 +33,10 @@
   color: $buttons;
   border-color: $buttons;
 }
+@mixin title ($text-align) {
+    font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  color: $titles-col;  
+  text-align: $text-align;
+}

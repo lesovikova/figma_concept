@@ -2,162 +2,152 @@
 @import "mixin";
 
 .section-first {
-    margin-top: 1rem;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+
+  @include e(column) {
+    flex-basis: 1;
+    margin: 0 1rem;
+
+    @include m(second) {
+      display: none;
+    }
+  }
+  @include e(title) {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    color: $titles-col;
+    text-align: left;
+  }
+  @include e(paragraph) {
+    font-family: "Gilroy-SemiBold";
+    color: $paragr-col;
+    text-align: left;
+    font-size: 1.2rem;
+  }
+  @include e(buttons) {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+  }
+  @include e(button) {
+    @include m(opaque) {
+      padding: 0.92rem 1.8rem;
+      @include buttonOrange;
+    }
+    @include m(clear) {
+      padding: 0.92rem 3.6rem;
+      @include buttonClear;
+    }
+  }
+  @include e(video-block) {
+    margin-top: 1rem;
+  }
+  @include e(link) {
+    color: $link-col;
+  }
+}
+.video-block {
+  @include e(video) {
+    width: 100%;
+  }
+}
+@media (min-width: 680px) {
+  html {
+    font-size: 15px;
+  }
+  .section-first {
+    @include e(buttons) {
+      margin: 1.5rem 0;
+      justify-content: space-evenly;
+    }
+  }
+}
+@media (min-width: 990px) {
+  html {
+    font-size: 16px;
+  }
+  
+  .section-first {
+    min-width: 1140px;
+    margin-top: 10rem;
+    justify-content: flex-end;
+    align-items: stretch;
 
-    @include e(column){
-        flex-basis: 1;
-        margin: 0 1rem;
+    @include e(column) {
+      @include m(first) {
+        flex-basis: 31%;
+        margin-left: auto;
+        flex-shrink: 1;
+      }
 
-        @include m(second) {
-            display: none;
-        }
+      @include m(second) {
+        flex-basis: 50%;
+        display: initial;
+        flex-shrink: 0;
+        position: relative;
+        top: 0;
+        left: 0;
+      }
     }
     @include e(title) {
-        font-family: 'Inter', sans-serif;
-        font-weight: 700;
-        font-size: 2rem;
-        color: $titles-col;
-        text-align: left;
+      font-size: 2.75rem;
     }
     @include e(paragraph) {
-        font-family: 'Gilroy-SemiBold';
-        color: $paragr-col;
-        text-align: left;
-        font-size: 1.2rem;
+      font-size: 1.125rem;
+      margin: 0;
+      @include m(video-link) {
+        margin-top: auto;
+      }
     }
     @include e(buttons) {
-        display: flex;
-        justify-content: space-between;
-        
+      margin-top: 2.5rem;
+      margin-bottom: 3.7rem;
+      justify-content: flex-start;
     }
     @include e(button) {
-        @include m(opaque) {
-            padding: 0.92rem 1.8rem;
-            @include buttonOrange 
-            
-        }
-        @include m(clear) {
-            padding: 0.92rem 3.6rem;
-            @include buttonClear 
-        }
+      margin-right: 1.25rem;
     }
     @include e(video-block) {
-        margin-top: 1rem;
+      display: flex;
+    }
+    @include e(img) {
+      max-width: 100%;
+      width: 100%;
+    }
+    @include e(decoration) {
+      @include m(man) {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      @include m(dots) {
+        position: absolute;
+        left: 5rem;
+        top: 1rem;
+      }
+    }
+  }
+
+  .video-block {
+    display: flex;
+    justify-content: flex-start;
+    @include e(video) {
+      margin-right: 1.25rem;
+      width: 8.75rem;
+      height: 5rem;
+      flex-basis: 1;
+    }
+    @include e(text) {
+      flex-basis: 3;
+      display: flex;
+      flex-direction: column;
     }
     @include e(link) {
-        color: $link-col;
+      font-size: 0.875rem;
     }
-
-    
-    }
-    .video-block {
-    @include e(video) {
-        width: 100%;
-    }
+  }
 }
-    @media (min-width: 680px) {
-        html {
-            font-size: 15px;
-        }
-        .section-first {
-            @include e(buttons) {
-                margin: 1.5rem 0;
-                justify-content: space-evenly;
-            }
-        }
 
-    }
-    @media (min-width: 990px) {
-        html {
-            font-size: 16px;
-        }
-        .section-first {
-            min-width: 1140px;
-            margin-top: 10rem;            
-            justify-content: center;
-            align-items: stretch;
-           
 
-            @include e(column){
-                @include m(first) {
-                    flex-basis: 33%;
-                    margin-left: auto;
-                    flex-shrink: 1;
-
-                }
-        
-                @include m(second) {
-                    flex-basis: 50%;
-                    display: initial;
-                    flex-shrink: 0;
-                    position: relative;
-                    top: 0;
-                    left: 0;
-                    
-                }
-            }
-            @include e(title) {
-                font-size: 2.75rem;
-            }
-            @include e(paragraph) {
-                font-size: 1.125rem;
-                margin: 0;
-                @include m(video-link) {
-                    margin-top: auto;
-                }
-            }
-            @include e(buttons) {
-                margin-top: 2.5rem;
-                margin-bottom: 3.7rem;
-                justify-content: flex-start;
-            }
-            @include e(button) {
-                margin-right: 1.25rem;
-            }
-            @include e(video-block) {
-                display: flex;
-            }
-            @include e(img) {
-                max-width: 100%;
-                width: 100%;
-            }
-            @include e(decoration) {
-                
-                @include m(man) {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                }
-                @include m(dots) {
-                    position: absolute;
-                    left: 5rem;
-                    top: 1rem;
-
-                }
-            }
-            
-        }
-        
-        .video-block {
-            display: flex;
-            justify-content: flex-start;
-            @include e(video) {
-                margin-right: 1.25rem;
-                width: 8.75rem;
-                height: 5rem;
-                flex-basis: 1;
-            }
-            @include e(text) {
-                flex-basis: 3;
-                display: flex;
-                flex-direction: column;
-            }
-            @include e(link) {
-                font-size: 0.875rem;
-            }
-            
-        }
-    
-}

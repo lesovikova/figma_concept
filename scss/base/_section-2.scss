@@ -1,0 +1,83 @@
+@import "mixin";
+@import "vars";
+
+.html {
+    font-size: 14px;
+}
+main {
+    overflow: hidden;
+}
+.decoration-falling {
+    display: none;
+}
+.sponsors {
+    padding-top: 5.69rem;
+    display: flex;
+    justify-content: space-evenly;
+    animation-name: slidein;
+    animation-delay: 0s;
+    animation-duration: 40s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    @include e(item) {
+flex-basis: 11%;
+        }
+    }
+@keyframes slidein {
+    from {
+      margin-right: 200%;
+      width: 300%;
+    }
+  
+    to {
+      margin-left: -200%;
+      width: 100%;
+    }
+}
+
+@media (min-width: 990px) {
+    html {
+        font-size: 16px;
+      }
+    .sponsors {
+        // padding-bottom: 500px;
+    position: relative;
+    animation: none;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    
+    @include e(item) {
+        text-align: center; 
+        margin: 0 0.4rem;
+    }
+
+    @include e(logo) {
+    max-width: 100%;
+    width: 100%;
+    }
+}
+
+    .decoration-falling {
+        display: initial;
+        font-size: 500px;
+        width: 100%;
+        overflow: visible;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .decoration-falling_left {
+        position: absolute;
+        top: 0;
+        left: 0;
+     
+        }
+        .decoration-falling_right {
+            position: absolute;
+            right: 0;
+            top: 0;
+
+        }
+}
