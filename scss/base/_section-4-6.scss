@@ -183,33 +183,59 @@ html {
                  
     }
 }
+
+
+
+
+  .fifth-section {
+    width: 100%;    
+  position: relative;  
+  text-align: center;
+     
+     @include e(title) {
+
+      @include m(color) {
+        color: $buttons;
+      }
+  
+      @include title(center)
+  }
+  @include e(button) {
+    padding: 1.06rem 2.06rem;
+    @include buttonOrange 
+  }
+  }
+
+
+  @media (min-width: 680px) {
+  html {
+    font-size: 15px;
+  }
+  }
+
+@media (min-width: 990px) {
 .fifth-section {
-  position: relative;
   width: 50%;
   margin: 10rem auto 0;
-  text-align: center;
-  
+
   @include e(title) {
+    margin-bottom: 0;
+  }
 
-    @include m(color) {
-      color: $buttons;
-    }
+  @include e(button) {
+    margin-top: 2.87rem;
+  }
+   
 
-    @include title(center)
-}
-@include e(button) {
-  padding: 1.06rem 2.06rem;
-  @include buttonOrange 
-}
 &::after {
   content: " ";
-  background: url(../../img/section-4/Section5.png);
-  position: absolute;
+      background: url(../../img/section-4/Section5.png);
+      position: absolute;
   top: 3.8rem;
   left: -25%;
   width: 75rem;
   height: 30rem;
   
-
+}
 }
 }
