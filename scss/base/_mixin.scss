@@ -55,7 +55,7 @@ left: $leftMargin;
 
   @mixin textFifteen ($lineHeight, $textAlign: center){
   	font-family: 'Gilroy-SemiBold';
-    font-size: 0,9375rem;
+    font-size: 0.94rem;
     color: $paragr-col;
     line-height: $lineHeight;
     text-align: $textAlign;
