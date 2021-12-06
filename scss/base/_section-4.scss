@@ -1,0 +1,103 @@
+@import "mixin";
+@import "vars";
+html {
+  font-size: 14px;
+}
+.traffic {
+  padding: 1rem 1rem 0 2rem;
+  text-align: center;
+
+  @include e(column-right) {
+    display: none;
+  }
+
+  @include e(title) {
+    @include title(center);
+    @include m(emph) {
+      color: $buttons;
+    }
+  }
+  @include e(text) {
+    @include textFifteen(1.75rem, left);
+  }
+  @include e(button) {
+    @include buttonOrange;
+    padding: 0.875rem 1.875rem;
+  }
+}
+
+@media (min-width: 680px) {
+  html {
+    font-size: 15px;
+  }
+  .traffic {
+    display: flex;
+    flex-direction: column;
+
+    @include e(column-right) {
+        position: relative;
+        display: initial;
+        height: 30rem;
+    }
+    @include e(column-left) {
+    }
+  }
+  .traffic__illustration {
+      padding-top: 2.5rem;
+      margin-left: 6rem;
+
+      @include m(first) {
+          position: absolute; 
+          top: 15rem;
+          left: 18rem;
+      }
+      @include m(second) {
+        position: absolute;
+        top: 0;
+        left: 6rem;
+      }
+      @include m(third) {     
+          z-index: 5;     
+        position: absolute;
+        top: 20rem;
+        left: 6rem;
+      }
+      @include m(fourth) {
+          position: absolute;
+          top: 1rem;
+          left: 0;
+      }
+  }
+}
+
+
+@media (min-width: 990px) {
+    html {
+        font-size: 16px;
+      }
+      .traffic {
+          margin-top: 5.5rem;
+        flex-direction: row;
+        justify-content: center;
+        text-align: left;
+        align-items: center;
+
+    @include e(illustration) {
+        margin-left: 3rem;
+    }
+
+        @include e(title) {
+            text-align: left;
+        }
+
+
+        @include e(column-left){
+            width: 30%;
+            flex-shrink: 1;
+            margin-left: auto;
+        }
+        @include e(column-right) {
+            width: 48%;
+        }
+}
+}

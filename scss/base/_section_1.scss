@@ -15,11 +15,7 @@
     }
   }
   @include e(title) {
-    font-family: "Inter", sans-serif;
-    font-weight: 700;
-    font-size: 2rem;
-    color: $titles-col;
-    text-align: left;
+    @include title(center)
   }
   @include e(paragraph) {
     font-family: "Gilroy-SemiBold";

@@ -11,6 +11,7 @@ main {
     display: none;
 }
 .sponsors {
+    opacity: 30%;
     padding-top: 2rem;
     display: flex;
     justify-content: space-evenly;
@@ -191,13 +192,15 @@ flex-basis: 11%;
     justify-content: center;
 
     @include e(column) {
-        flex-basis: 13%;
+        flex-basis: 17%;
         margin-left: 3.12rem;
     }
     @include e(title) {
         margin: 0;
     }
-    @include e(text) 
+    @include e(text) {
+        padding: 0 0.5rem 0 0;
+    }
 }
 
 
