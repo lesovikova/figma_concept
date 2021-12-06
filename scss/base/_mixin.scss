@@ -33,10 +33,21 @@
   color: $buttons;
   border-color: $buttons;
 }
-@mixin title ($text-align) {
-    font-family: "Inter", sans-serif;
+@mixin title ($textAlign) {
+  font-family: "Inter", sans-serif;
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 2.75rem;
   color: $titles-col;  
-  text-align: $text-align;
+  text-align: $textAlign;
 }
+@mixin beforeicon ($beforeIcon, $leftMargin: -2.5rem,)
+{
+background:  $beforeIcon, no-repeat;  
+content: "";
+width: 24px;
+height: 24px; 
+float: left;
+position: absolute;
+top: 0;
+left: $leftMargin;
+  }

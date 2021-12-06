@@ -1,0 +1,204 @@
+@import "mixin";
+@import "vars";
+
+.html {
+    font-size: 14px;
+}
+main {
+    overflow: hidden;
+}
+.decoration-falling {
+    display: none;
+}
+.sponsors {
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+    animation-name: slidein;
+    animation-delay: 0s;
+    animation-duration: 40s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    @include e(item) {
+flex-basis: 11%;
+        }
+    }
+@keyframes slidein {
+    from {
+      margin-right: 200%;
+      width: 300%;
+    }
+  
+    to {
+      margin-left: -200%;
+      width: 100%;
+    }
+}
+
+@media (min-width: 990px) {
+    html {
+        font-size: 16px;
+      }
+    .sponsors {        
+    padding-top: 6rem;
+    position: relative;
+    animation: none;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    
+    @include e(item) {
+        text-align: center; 
+        margin: 0 0.4rem;
+    }
+
+    @include e(logo) {
+    max-width: 100%;
+    width: 100%;
+    }
+}
+
+    .decoration-falling {
+        opacity: 30%;
+        display: initial;
+        font-size: 500px;
+        width: 100%;
+        overflow: visible;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .decoration-falling_left {
+        position: absolute;
+        top: 0;
+        left: 0;
+     
+        }
+        .decoration-falling_right {
+            position: absolute;
+            right: 0;
+            top: 0;
+
+        }
+}
+
+
+// SECTION 3
+
+.benefits {
+    padding: 1rem 1.5rem 0 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include e(title) {
+
+        @include title($textAlign: center);
+        
+    }
+    @include e(subtitle) {
+        font-size: 1.14rem;
+        font-family: 'Gilroy-SemiBold';
+        line-height: 1.37rem;
+        text-align: left;
+        color: $paragr-col;
+    }
+}
+.description {
+    
+    @include e(title) {
+        font-family: 'Gilroy-Bold'; 
+        font-size: 1.125rem;
+        color: $titles-col;
+        line-height: 1.37rem;
+        position: relative;
+        @include m(first) {
+            &::before {
+                @include beforeicon(url(../../img/section-3/Flip-horizontal.png));
+        }}
+        @include m(second) {
+            &::before {
+                @include beforeicon(url(../../img/section-3/Airpods.png));
+        }
+        }
+        @include m(third) {
+            &::before {
+                @include beforeicon(url(../../img/section-3/LTE1.png));
+        }
+        }
+        @include m(fourth) {
+            &::before {
+                @include beforeicon(url(../../img/section-3/Thunder-move.png));
+        }
+        }
+        @include m(fifth) {
+            &::before {
+                @include beforeicon(url(../../img/section-3/Attachment1.png));
+        }
+        }
+        @include m(sixth) {
+            &::before {
+                @include beforeicon(url(../../img/section-3/Bulb1.png));
+        }
+        }
+                
+        &::after {
+        content: " ";
+	    display: table;
+	    clear: both;
+        }
+    }
+    @include e(text) {
+        font-family: 'Gilroy-SemiBold';
+        font-size: 0.875rem;
+        line-height: 1.37rem;
+        color: $paragr-col;
+        
+
+    }
+}
+
+@media (min-width: 680px) {
+    .html {
+        font-size: 15px;
+    }
+    .description__title {
+        width: fit-content;
+        margin: auto;
+    }
+}
+
+@media (min-width: 990px) {
+    .html {
+        font-size: 16px;
+    }
+    .benefits {
+        margin-top: 3rem;
+
+        @include e(title) {
+            margin-bottom: 0.9rem;
+        }
+
+        @include e(subtitle) {
+            margin: 0;
+        }
+    }
+.description {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+
+    @include e(column) {
+        flex-basis: 13%;
+        margin-left: 3.12rem;
+    }
+    @include e(title) {
+        margin: 0;
+    }
+    @include e(text) 
+}
+
+
+}
