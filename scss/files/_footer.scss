@@ -1,0 +1,107 @@
+@import "vars";
+@import "mixin";
+
+html {
+  font-size: 14px;
+}
+.footer {
+  text-align: center;
+  opacity: 70%; 
+
+  @include e(title) {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    color: $buttons;
+    font-size: 1.63rem;
+  }
+
+  @include e(menu-item_first) {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    color: $white;
+    font-size: 0.94rem;
+  }
+  @include e(menu-link) {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    color: $white;
+    font-size: 0.94rem;
+  }
+  @include e(copyright-text) {
+    color: $corpyright;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    font-size: 0.86rem;
+  }
+}
+
+@media (min-width: 680px) {
+  html {
+    font-size: 15px;
+  }
+  .footer {
+      
+background: url(../../img/section-8/Group_footer.png), no-repeat;   
+    @include e(menu) {
+        margin-top: 3rem;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        
+    }
+    @include e(menu-column) {
+        flex-basis: 45%;
+    }
+    @include e(copywrite) {
+        margin-top: 3rem;
+    }
+    @include e(menu-item) {
+        margin-top: 0.5rem;
+        
+    }
+  }
+}
+
+@media (min-width: 990px) {
+  html {
+    font-size: 16px;
+  }
+
+  .footer {
+      
+    @include e(social-menu) {
+      display: flex;
+      justify-content: space-around;
+    }
+    @include e(menu) {
+      margin-top: 5.9rem;
+      display: flex;
+      justify-content: center;
+    }
+    @include e(menu-column) {
+        flex-basis: 11%;
+      text-align: left;
+      margin-left: 6%;
+      
+    }
+    @include e(copywrite) {
+      display: flex;
+      justify-content: center;
+      margin-top: 7.5rem;
+      margin-bottom: 6.4rem;
+    }
+    @include e(copyright-text) {
+      margin-left: 2.2rem;
+      &:first-of-type {
+        margin-left: 0;
+      }
+    }
+    @include e(menu-item) {
+      margin-top: 1rem;
+      @include m(first) {
+        margin-bottom: 1.56rem;
+      }
+    }
+  }
+}
