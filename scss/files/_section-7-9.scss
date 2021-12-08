@@ -1,0 +1,374 @@
+@import "vars";
+@import "mixin";
+
+.html {
+  font-size: 14px;
+}
+
+.invest {
+  margin-top: 6rem;
+  padding: 0 0.5rem 0 0.5rem;
+  text-align: center;
+  @include e(column) {
+    @include m(right) {
+      display: none;
+    }
+  }
+  @include e(title) {
+    @include title(center);
+    @include m(emph) {
+      color: $buttons;
+    }
+  }
+  @include e(text) {
+    @include textFifteen(1.75rem);
+    margin-bottom: 1.5rem;
+  }
+  @include e(button) {
+    @include buttonOrange;
+    padding: 1.06rem 1.87rem;
+  }
+}
+
+@media (min-width: 680px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 990px) {
+  html {
+    font-size: 16px;
+  }
+  .invest {
+    margin-top: 25.5rem;
+    margin-bottom: 6rem;
+    text-align: left;
+    display: flex;
+    @include e(column) {
+      @include m(right) {
+        flex-basis: 50%;
+        display: initial;
+        position: relative;
+        height: 30rem;
+      }
+      @include m(left) {
+        flex-basis: 25%;
+        margin-left: auto;
+      }
+    }
+    @include e(title) {
+      text-align: left;
+    }
+    @include e(text) {
+      text-align: left;
+      margin-bottom: 2.87rem;
+    }
+    @include e(image) {
+      position: absolute;
+      @include m(first) {
+        top: 0;
+        left: 0;
+      }
+      @include m(second) {
+        top: 14.3rem;
+        left: 23.7rem;
+      }
+      @include m(third) {
+        top: -1rem;
+        left: 6.9rem;
+      }
+      @include m(fourth) {
+        top: 6.6rem;
+        left: 6.6rem;
+      }
+    }
+  }
+}
+
+
+// SECTION 8
+
+.section-eight {
+    margin-top: 4.5rem;
+
+    padding: 0 0.5rem;
+    @include e(column) {
+
+        @include m(left) {
+            display: none;
+        }
+
+    }
+    @include e(title) {
+        @include title(center);
+        font-size: 1.62rem;
+    }
+    @include e(text) {
+        @include textFifteen(1.25rem);
+    }
+}
+
+.subcolumn {
+    padding: 2rem 0.5rem 0;
+
+    @include e(title) {
+        @include title(left);
+        font-size: 0.94rem;
+
+        @include m(left) {
+
+        position: relative;
+        
+        &::before {
+            content: " ";
+            position: absolute;
+            float: left;
+            top: -3.25rem;
+            left: 0; 
+            background: url(../../img/section-8/Swiss-knife.png), no-repeat;
+            width: 36px;
+            height: 36px;
+        }
+        }
+        
+        @include m(right) {
+            position: relative;
+            &::before {
+                content: " ";
+                position: absolute;
+                float: left;
+                top: -3.25rem;
+                left: 0; 
+                background: url(../../img/section-8/LTE1.png), no-repeat;
+                width: 36px;
+                height: 36px;
+                }
+         }
+        }
+        @include e(text) {
+            @include textFifteen(1.25rem, left);
+        }
+    }
+
+    
+
+
+@media (min-width: 680px) {
+    html {
+        font-size: 15px;
+    }
+    .section-eight {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        @include e(title) {
+            flex-basis: 100%;
+        }
+        @include e(text) {
+            flex-basis: 100%;
+        }
+        @include e(column) {
+
+            @include m(left) {
+                display: initial;
+                position: relative;
+                flex-basis: 70%;
+                height: 28rem;
+                margin: auto;
+                
+
+            }
+            @include m(right) {
+                flex-basis: 100%;
+                padding: 0.5rem;
+                display: flex;
+                justify-content: row;
+                flex-wrap: wrap;
+                margin-bottom: 4rem;
+            }
+    
+        }
+        @include e(item) {
+            position: absolute;
+            @include m(first) {
+                top: -1.45rem;
+                left: 4.1rem;
+
+            }
+            @include m(second) {
+                top: 12.9rem;
+                left: 0;
+
+            }
+            @include m(third) {
+                top: 13.2rem;
+                left: 26.7rem;
+            }
+            @include m(fourth) {
+                top: 0;
+                left: 4.9rem;
+            }
+        }
+
+    }
+    .subcolumn {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: auto;
+        margin-top: 1rem;
+
+        @include m(right) {
+        flex-basis: 40%;
+        }
+        @include m(left) {
+            flex-basis: 40%;
+        }
+    }
+
+}
+
+@media (min-width: 990px) {
+    html {
+        font-size: 16px;
+    }
+    .section-eight {
+        flex-direction: row;
+        justify-content: flex-end;
+        position: relative;
+        @include e(column) {
+            @include m(left) {        
+                order: -1;
+                margin: 0;
+                flex-basis: 24%;
+                margin-right: 10rem;
+            }
+            @include m(right) {
+                flex-basis: 33%;
+                margin-left: 0;
+                margin-right: 11rem;
+            }
+         }
+         @include e(title) {
+            text-align: left;
+        }
+        @include e(text) {
+            text-align: left;
+        }
+        @include e(title) {
+            flex-basis: 80%;
+        }
+        @include e(text) {
+            flex-basis: 75%;
+        }
+
+        &::after {
+            content: " ";
+            background: url(../../img/section-8/Group10.png), no-repeat;
+            height: 24rem;
+            width: 35rem;
+            position: absolute;
+            top: -8rem;
+            right: 2rem;
+
+        }
+    }
+    .subcolumn {
+       padding: 0;
+       margin: 2rem 0 0 0;
+       justify-content: flex-start;
+       @include m(right) {
+           margin-left: 4rem;
+       }
+       @include e(title) {
+           margin-bottom: 0;
+       }
+    }
+}
+
+// SECTION 9
+
+.subscription {
+ text-align: center;
+
+  @include e(title) {
+    padding: 0;
+    font-family: 'Rubik', sans-serif;
+    font-size: 2.25rem;
+    font-weight: 500;
+    line-height: 2.69rem;
+    color: $buttons;
+    margin-top: 3.13rem;
+  }
+
+  @include e(text) {
+    margin-top: 1.25rem;
+    padding: 0;
+    color: $wrapper-text;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    line-height: 1.38rem;
+  }
+
+  @include e(form) {
+    margin-top: 1.44rem;
+    font-size: 0;
+    display: flex;
+    justify-content: center;
+  }
+  @include e(field) {
+    opacity: 35%;
+    border-radius: 5px;
+    padding: 1rem;
+    border: none;
+    width: 18rem;
+    height: 3.5rem;
+    color: $white;
+    font-size: initial;
+    
+    &::placeholder {
+      color: $white;
+      font-size: 0.87rem;
+      font-family: "Inter", sans-serif;      
+    }
+      }
+      @include e(button) {
+        @include buttonOrange;
+        padding: 1.13rem 2.5rem;
+      }
+      @include e(text-small) {
+        margin-top: 1rem;
+        font-size: 0.875rem;        
+  	font-family: 'Gilroy-SemiBold';
+    line-height: 1.25rem;
+    color: $paragr-col;
+
+      }
+  
+}
+
+input.subscription__field, textarea {
+  background: $form-field;
+    }
+
+    @media (min-width: 990px) {
+      .subscription {
+        background: url(../../img/section-8/Group9th.png), no-repeat;
+        margin-top: 10rem;
+
+        @include e(wrapper) {
+          border-radius: 5px;
+          padding: 3.1rem 0;
+          text-align: center;
+          background-color: $wrapper-col;
+          width: 59rem;
+          margin: auto;
+        }
+        @include e(text) {
+
+          width: 40%;
+          margin: auto;
+        }
+      }
+    }

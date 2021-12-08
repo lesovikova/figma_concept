@@ -50,6 +50,7 @@ float: left;
 position: absolute;
 top: 0;
 left: $leftMargin;
+@content;
   }
 
 
@@ -59,4 +60,8 @@ left: $leftMargin;
     color: $paragr-col;
     line-height: $lineHeight;
     text-align: $textAlign;
+  }
+
+  @function rem($target) {
+    @return ($target / $baseFontSize) * 1rem
   }
