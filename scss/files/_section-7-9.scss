@@ -7,7 +7,7 @@
 
 .invest {
   margin-top: 6rem;
-  padding: 0 0.5rem 0 0.5rem;
+  padding: 0 1rem;
   text-align: center;
   @include e(column) {
     @include m(right) {
@@ -291,6 +291,7 @@
 
 .subscription {
  text-align: center;
+ padding: 0 1rem;
 
   @include e(title) {
     padding: 0;
